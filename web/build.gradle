@@ -1,0 +1,24 @@
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+repositories {
+    maven { url "http://repo.maven.apache.org/maven2" }
+    mavenLocal()
+}
+
+dependencies {
+	providedCompile project(':ejb-client')
+	compileOnly group: 'javax', name: 'javaee-api', version:'7.0'
+	compile group: 'org.wildfly', name: 'wildfly-client-all', version: '10.1.0.Final'
+	
+}
+
+eclipse {
+  wtp {
+    facet {
+       facet name: 'java',     version: '1.8'
+       facet name: 'jst.web',  version: '3.1'
+       facet name: 'jst.java', version: '1.8'
+    }
+  }
+ }

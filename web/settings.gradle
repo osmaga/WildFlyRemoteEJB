@@ -1,0 +1,4 @@
+rootProject.name = 'web'
+
+include ':ejb-client'
+project(':ejb-client').projectDir =  new File(settingsDir, '../ejb-client')

@@ -1,0 +1,11 @@
+apply plugin: 'ear'
+
+repositories {
+    maven { url "http://repo.maven.apache.org/maven2" }
+    mavenLocal()
+}
+
+dependencies {
+    deploy project(':ejb')
+    earlib project(path: ':ejb', configuration: 'compile')
+}

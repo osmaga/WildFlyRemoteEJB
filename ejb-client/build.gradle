@@ -1,0 +1,10 @@
+apply plugin: 'java'
+
+repositories {
+    maven { url "http://repo.maven.apache.org/maven2" }
+    mavenLocal()
+}
+
+dependencies {
+	compileOnly group: 'javax', name: 'javaee-api', version:'7.0'
+}
